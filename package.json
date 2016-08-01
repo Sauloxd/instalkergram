@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Stalk everyone, and save the photos for later... :)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sauloxd/instalkergram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sauloxd/instalkergram/issues"
+  },
+  "dependencies": {
+   "body-parser": "^1.15.2",
+   "cors": "^2.7.1",
+   "express": "^4.14.0",
+   "underscore": "^1.8.3"
+ },
+  "homepage": "https://github.com/Sauloxd/instalkergram#readme"
+}
