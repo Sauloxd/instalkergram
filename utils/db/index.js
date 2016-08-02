@@ -34,3 +34,22 @@ exports.update = function(collection, query, callback) {
      callback();
   });
 };
+
+exports.find = function(collection, query, callback) {
+  var _collection = db.collection(collection);
+  var cursor = _collection.find(query);
+  cursor.toArray(function (err, docs) {
+      assert.equal(null, err);
+      callback(docs);
+  });
+};
+
+exports.delete = function(collection, query, callback) {
+  var _collection = db.collection(collection);
+  _collection.update(
+    { "category": query.category },
+    { $pull: { 'stalking': { hashtag: query.hashtag } } }, function(err, results) {
+    callback();
+  }
+  );
+};
