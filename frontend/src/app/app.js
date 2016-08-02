@@ -3,6 +3,7 @@ import uirouter from 'angular-ui-router';
 
 import routing from './app.config';
 import home from './pages/home';
+import oauth from './pages/oauth';
 import factories from './factory';
 
 import 'expose?jQuery!jquery/dist/jquery.min.js';
