@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --history-api-fallback --inline --progress --port 4000"
   },
-
   "author": "sauloxd",
   "license": "ISC",
   "devDependencies": {
@@ -37,7 +36,9 @@
     "angular": "^1.5.7",
     "angular-ui-router": "^0.3.1",
     "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
     "font-awesome-webpack": "0.0.4",
+    "jquery": "^3.1.0",
     "lodash": "^4.14.1",
     "ng-annotate": "^1.2.1",
     "underscore": "^1.8.3",

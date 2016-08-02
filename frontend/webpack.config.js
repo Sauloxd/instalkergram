@@ -196,7 +196,11 @@ module.exports = function makeWebpackConfig () {
   // Add build specific plugins
   if (isProd) {
     config.plugins.push(
-
+      new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+          "window.jQuery": "jquery"
+      }),
       // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
       // Only emit files when there are no errors
       new webpack.NoErrorsPlugin(),

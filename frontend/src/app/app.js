@@ -4,6 +4,10 @@ import uirouter from 'angular-ui-router';
 import routing from './app.config';
 import home from './pages/home';
 
+import 'expose?jQuery!jquery/dist/jquery.min.js';
+import '../styles/app.css';
+import 'bootstrap';
+
 console.log('carregou ctrl');
 class AppCtrl {
   constructor() {
