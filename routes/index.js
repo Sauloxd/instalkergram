@@ -1,0 +1,1 @@
+exports.instalkergram = require('./instalkergram');
