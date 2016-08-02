@@ -11,6 +11,7 @@ app.use(cors());
 
 // routes
 app.post('/create-category', routes.instalkergram.createCategory);
+app.post('/update-category', routes.instalkergram.updateCategory);
 
 app.listen(3000, function () {
   console.log('rodando na porta 3000 :D!');
