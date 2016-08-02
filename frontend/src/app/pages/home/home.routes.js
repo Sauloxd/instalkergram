@@ -7,7 +7,7 @@ export default function routes($stateProvider) {
       url: '/home',
       templateUrl: 'home.html',
       controller: 'HomeController',
-      controllerAs: 'home'
+      controllerAs: 'homeVm'
     });
 
 }

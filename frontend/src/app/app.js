@@ -3,6 +3,7 @@ import uirouter from 'angular-ui-router';
 
 import routing from './app.config';
 import home from './pages/home';
+import factories from './factory';
 
 import 'expose?jQuery!jquery/dist/jquery.min.js';
 import '../styles/app.css';
@@ -18,7 +19,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [uirouter, home])
+angular.module(MODULE_NAME, [uirouter, home, factories])
   .config(routing)
   .controller('AppCtrl', AppCtrl);
 
