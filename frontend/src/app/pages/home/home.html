@@ -1,3 +1,10 @@
 <div ng-include="'navbar.html'"></div>
 <h1>Hello World!</h1>
 <button type="button" name="auth" ng-click="homeVm.auth()">Authenticate</button>
+
+<div class="">
+  <label for="hashtag">Hashtag: </label>
+  <input type="text" name="hashtag" value="hashtag" id="hashtag" ng-model="homeVm.hashtag">
+</div>
+
+<button type="button" name="auth" ng-click="homeVm.getUrls()">Get Urls!</button>

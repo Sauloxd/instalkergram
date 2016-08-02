@@ -20,7 +20,7 @@ class AppCtrl {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [uirouter, home, factories])
+angular.module(MODULE_NAME, [uirouter, home, factories, oauth])
   .config(routing)
   .controller('AppCtrl', AppCtrl);
 
