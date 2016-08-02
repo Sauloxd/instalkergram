@@ -14,7 +14,23 @@ exports.insert = function(collection, query, callback) {
     var _collection = db.collection(collection);
     _collection.insertOne( query , function(err, result) {
         assert.equal(err, null);
-        console.log("Inserted a document into the " + collection + " collection.");
         callback();
       });
+};
+
+
+exports.update = function(collection, query, callback) {
+    var _collection = db.collection(collection);
+    _collection.updateOne(
+     { "category" : query.category },
+     {
+       $push: {
+                "stalking": {
+                  "hashtag": query.hashtag,
+                  "url": query.url
+                }
+              }
+     }, function(err, results) {
+     callback();
+  });
 };
