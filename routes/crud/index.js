@@ -9,13 +9,24 @@ exports.createCategory = function(req, res) {
     })
 };
 
+exports.getCategories = function(req, res) {
+    var _results = [];
+    db.find('instalkergram', {} , function(docs) {
+        docs.forEach((item)=>{
+          _results.push(item.category);
+        })
+        console.log(_results);
+        res.json(_results);
+    })
+};
+
+
 exports.updateCategory = function(req, res) {
     var _category = req.body.category;
-    var _hashtag = req.body.hashtag;
-    var _url = req.body.url;
-
-    db.update('instalkergram', {category: _category, hashtag: _hashtag, url: _url}, function() {
-        console.log('hashtag ' + _hashtag + ' inserted!');
+    var _item = req.body.item;
+    console.log('updating.. ' + _category + '...item..', _item);
+    db.update('instalkergram', {category: _category, item: _item}, function() {
+        console.log('item ' + _item + ' inserted!');
         res.json({success: true});
     })
 };
@@ -29,11 +40,13 @@ exports.getImages = function(req, res) {
 };
 
 exports.deleteImage = function(req, res) {
+    console.log(req.body);
     var _category = req.body.category;
-    var _hashtag = req.body.hashtag;
+    var _item = req.body.item;
+    console.log('my category is ', _category);
+    console.log('my item is ', _item);
+    db.delete('instalkergram', {category: _category, item: _item}, function() {
 
-    db.delete('instalkergram', {category: _category, hashtag: _hashtag}, function() {
-        console.log('hashtag ' + _hashtag + ' removed!');
         res.json({success: true});
     })
 };

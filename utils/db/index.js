@@ -20,15 +20,14 @@ exports.insert = function(collection, query, callback) {
 
 
 exports.update = function(collection, query, callback) {
+  console.log('my coll', collection);
+
     var _collection = db.collection(collection);
     _collection.updateOne(
      { "category" : query.category },
      {
        $push: {
-                "stalking": {
-                  "hashtag": query.hashtag,
-                  "url": query.url
-                }
+                "stalking": query.item
               }
      }, function(err, results) {
      callback();
@@ -48,7 +47,7 @@ exports.delete = function(collection, query, callback) {
   var _collection = db.collection(collection);
   _collection.update(
     { "category": query.category },
-    { $pull: { 'stalking': { hashtag: query.hashtag } } }, function(err, results) {
+    { $pull: { 'stalking': query.item } }, function(err, results) {
     callback();
   }
   );

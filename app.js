@@ -10,10 +10,12 @@ app.use(express.static('public')); //Serving front from public
 app.use(cors());
 
 // routes
+app.get('/get-categories', routes.crud.getCategories);
 app.post('/create-category', routes.crud.createCategory);
 app.post('/update-category', routes.crud.updateCategory);
 app.get('/get-images/:category', routes.crud.getImages);
-app.delete('/delete-image', routes.crud.deleteImage);
+// how to get the item to delete?
+app.post('/delete-image', routes.crud.deleteImage);
 
 app.get('/getUrlsFromInstagram/:q/:token', routes.instagram.getUrls);
 
