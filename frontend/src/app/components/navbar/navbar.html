@@ -15,11 +15,11 @@
     <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
 
        <ul class = "nav navbar-nav">
-          <li ><a href = "#">Create new category!</a></li>
+          <!-- <li ><a disabled href = "#">Create new category!</a></li> -->
           <li ng-repeat="category in navVm.categories"><a ui-sref="album({category: category})">{{category}}</a></li>
 
        </ul>
-       <button disabled ng-if="navVm.isAuth" type="button" class="btn btn-default navbar-btn navbar-right" ng-click="navVm.logout()">Logout</button>
+       <button ng-if="navVm.isAuth" type="button" class="btn btn-default navbar-btn navbar-right" ng-click="navVm.logout()">Logout</button>
     </div>
 
   </div>

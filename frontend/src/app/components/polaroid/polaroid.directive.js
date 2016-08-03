@@ -6,7 +6,8 @@ export default function polaroid(crudFactory){
         templateUrl: 'polaroid.html', // markup for template
         scope: {
             data: '=',
-            add: '='
+            add: '=',
+            index: '='
         },
         link: function(scope, element, attr) {
 
@@ -20,6 +21,7 @@ export default function polaroid(crudFactory){
             console.log('is remove: ');
             scope.action = function () {
               crudFactory.removeFromCategory('Album', scope.data).then(()=>{console.log('posted!')}, (err)=>{console.log('err', err)});
+              scope.$emit('itemDeleted', {deleted: true, index: scope.index});
             }
           }
 

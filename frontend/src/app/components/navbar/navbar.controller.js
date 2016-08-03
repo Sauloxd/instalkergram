@@ -3,6 +3,7 @@ var navbarCtrl = function(instagramFactory, crudFactory) {
   vm.isAuth = instagramFactory.isAuth();
 
   crudFactory.getCategories().then((response)=>{
+    console.log('getting categories', response);
     vm.categories = response.data;
   }, (err)=>{
     console.log('err', err);
