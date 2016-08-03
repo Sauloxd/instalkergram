@@ -10,7 +10,12 @@ var homeCtrl = function (instagramFactory, $location) {
   this.getUrls = function () {
       console.log('search for ', vm.hashtag);
       console.log('my token', instagramFactory.getToken());
-      console.log('my urls ', instagramFactory.getUrls(vm.hashtag));
+      instagramFactory.getUrls(vm.hashtag).then((response)=> {
+          console.log('my urls: ', response.data);
+        },
+        (err) => {
+          console.log('err', err)
+        });
   }
 }
 

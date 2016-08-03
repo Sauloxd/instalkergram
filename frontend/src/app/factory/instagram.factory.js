@@ -11,19 +11,7 @@ var instagramFactory = function ($location, constantsFactory, $http) {
 
   instagram.getUrls = function (hashtag) {
     console.log('getting photo...');
-    $http.get('http://localhost:3000/getUrlsFromInstagram/'+ _token).then((response)=> {
-      return response.data;
-    },
-      (err) => {
-        console.log('err', err)
-      });
-    //
-    // $http.get('https://api.instagram.com/v1/tags/' + hashtag + '?access_token=' + _token).then((response)=> {
-    //   return response.data;
-    // },
-    //   (err) => {
-    //     console.log('err', err)
-    //   });
+    return $http.get('http://localhost:3000/getUrlsFromInstagram/' + hashtag +'/'+ _token);
   }
 
   instagram.getToken = function() {

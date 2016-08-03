@@ -15,7 +15,7 @@ app.post('/update-category', routes.crud.updateCategory);
 app.get('/get-images/:category', routes.crud.getImages);
 app.delete('/delete-image', routes.crud.deleteImage);
 
-app.get('/getUrlsFromInstagram/:token', routes.instagram.getUrls);
+app.get('/getUrlsFromInstagram/:q/:token', routes.instagram.getUrls);
 
 app.listen(3000, function () {
   console.log('rodando na porta 3000 :D!');
