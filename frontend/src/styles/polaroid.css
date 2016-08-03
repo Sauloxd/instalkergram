@@ -1,0 +1,60 @@
+.polaroid--frame {
+  width: 386px;
+  height: 476px;
+  border: 1px solid #B5B5B5;
+  position: relative;
+  font-size: 0;
+}
+
+.polaroid--frame:before {
+  display:block;
+  content:" ";
+  position:absolute;
+  z-index:1;
+  background:black;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  opacity:0;
+}
+
+.polaroid--frame:hover:before {
+  opacity: 0.5;
+}
+
+.polaroid--photo {
+  width: 348px;
+  height: 358px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 15px;
+}
+
+.polaroid--user {
+  width: 348px;
+  vertical-align: middle;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8%;
+}
+
+.polaroid--user span {
+  vertical-align: middle;
+  margin-left: 15px;
+  color: #AAA;
+}
+
+.polaroid--user__photo {
+  height: 36px;
+  width: 36px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.polaroid--user .polaroid--user__hashtag {
+  font-family: signpainter;
+  margin-left: 140px;
+}

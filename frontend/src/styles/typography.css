@@ -1,0 +1,11 @@
+span.sm {
+  font-size: 16px;
+  font-family: avenir;
+  font-weight: lighter;
+  color: black;
+}
+
+span.lg {
+  font-size: 38px;
+  color: black;
+}
