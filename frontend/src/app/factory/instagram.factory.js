@@ -3,15 +3,15 @@ var instagramFactory = function ($location, constantsFactory, $http) {
   var instagram = {}
 
   instagram.authenticate = function () {
-    console.log('getting photo...');
     console.log(' the url : ',  $location.absUrl().split('#')[0]);
-    window.open("https://instagram.com/oauth/authorize/?client_id=" + constantsFactory.clientId +
+    var igPopup = window.open("https://instagram.com/oauth/authorize/?client_id=" + constantsFactory.clientId +
         "&redirect_uri=" + constantsFactory.redirectUri +
-        "&response_type=token", "igPopup");
+        "&response_type=token" + "&scope=public_content", "igPopup");
   }
 
   instagram.getUrls = function (hashtag) {
-    $http.post('http://localhost:3000/getUrlsFromInstagram', {token: _token}).then((response)=> {
+    console.log('getting photo...');
+    $http.get('http://localhost:3000/getUrlsFromInstagram/'+ _token).then((response)=> {
       return response.data;
     },
       (err) => {
