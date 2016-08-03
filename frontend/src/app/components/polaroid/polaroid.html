@@ -10,6 +10,7 @@
         {{data.caption.text}}
       </span>
     </div>
-    <img src="../../../public/images/addPhoto.png" alt="add button" class="polaroid--addButton"/>
+    <img ng-if="add" src="../../../public/images/addPhoto.png" alt="add button" class="polaroid--addButton"/>
+    <img ng-if="!add" src="../../../public/images/removePhoto.png" alt="add button" class="polaroid--addButton"/>
   </div>
 </button>
