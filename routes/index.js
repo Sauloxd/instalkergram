@@ -1,1 +1,2 @@
-exports.instalkergram = require('./instalkergram');
+exports.crud = require('./crud');
+exports.instagram = require('./instagram');
