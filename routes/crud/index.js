@@ -40,11 +40,13 @@ exports.getImages = function(req, res) {
 };
 
 exports.deleteImage = function(req, res) {
+    console.log(req.body);
     var _category = req.body.category;
     var _item = req.body.item;
-
+    console.log('my category is ', _category);
+    console.log('my item is ', _item);
     db.delete('instalkergram', {category: _category, item: _item}, function() {
-        console.log('hashtag ' + _item + ' removed!');
+
         res.json({success: true});
     })
 };

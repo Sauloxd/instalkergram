@@ -19,7 +19,7 @@ export default function polaroid(crudFactory){
           } else {
             console.log('is remove: ');
             scope.action = function () {
-              console.log('im removed!');
+              crudFactory.removeFromCategory('Album', scope.data).then(()=>{console.log('posted!')}, (err)=>{console.log('err', err)});
             }
           }
 
