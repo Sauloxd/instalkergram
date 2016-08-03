@@ -17,6 +17,9 @@
   right:0;
   bottom:0;
   opacity:0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
 .polaroid--addButton {
@@ -28,18 +31,25 @@
 
 .polaroid--frame  .polaroid--addButton {
   opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 
 .polaroid--frame:hover  .polaroid--addButton {
   opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
   z-index: 2;
 }
 
 .polaroid--frame:hover:before {
   opacity: 0.5;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
-
-
 
 .polaroid--photo {
   width: 348px;
@@ -62,7 +72,6 @@
 .polaroid--user span {
   vertical-align: middle;
   margin-left: 15px;
-  color: #AAA;
 }
 
 .polaroid--user__photo {
