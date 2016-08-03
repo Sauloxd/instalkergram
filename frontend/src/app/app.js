@@ -1,15 +1,16 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
+import 'expose?jQuery!jquery/dist/jquery.min.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/index.css';
+
 import routing from './app.config';
 import navbarCtrl from './components/navbar/navbar.controller'
 import home from './pages/home';
 import oauth from './pages/oauth';
 import factories from './factory';
 
-import 'expose?jQuery!jquery/dist/jquery.min.js';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/index.css';
 
 //this shit lib does not return its name when called
 import 'ngstorage/ngStorage';

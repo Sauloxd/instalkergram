@@ -1,5 +1,4 @@
 var instagramFactory = function ($location, constantsFactory, $http, $localStorage, $state) {
-  var _token = '';
   var instagram = {}
 
   instagram.authenticate = function () {
@@ -13,7 +12,7 @@ var instagramFactory = function ($location, constantsFactory, $http, $localStora
 
   instagram.getUrls = function (hashtag) {
     console.log('getting photo...');
-    return $http.get('http://localhost:3000/getUrlsFromInstagram/' + hashtag +'/'+ _token);
+    return $http.get('http://localhost:3000/getUrlsFromInstagram/' + hashtag +'/'+ $localStorage.isg.token);
   }
 
   instagram.getToken = function() {
