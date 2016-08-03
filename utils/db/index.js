@@ -25,10 +25,7 @@ exports.update = function(collection, query, callback) {
      { "category" : query.category },
      {
        $push: {
-                "stalking": {
-                  "hashtag": query.hashtag,
-                  "url": query.url
-                }
+                "stalking": query.item
               }
      }, function(err, results) {
      callback();

@@ -10,6 +10,7 @@ app.use(express.static('public')); //Serving front from public
 app.use(cors());
 
 // routes
+app.get('/get-categories', routes.crud.getCategories);
 app.post('/create-category', routes.crud.createCategory);
 app.post('/update-category', routes.crud.updateCategory);
 app.get('/get-images/:category', routes.crud.getImages);
