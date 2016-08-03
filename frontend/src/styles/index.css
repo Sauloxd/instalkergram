@@ -1,4 +1,5 @@
 @import './reset.css';
+@import './bootstrap-custom.css';
 @import './app.css';
 @import './typography.css';
 @import './polaroid.css';

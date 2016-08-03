@@ -7,8 +7,8 @@ import oauth from './pages/oauth';
 import factories from './factory';
 
 import 'expose?jQuery!jquery/dist/jquery.min.js';
-import '../styles/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/index.css';
 
 console.log('carregou ctrl');
 class AppCtrl {

@@ -1,18 +1,4 @@
 /* styles in src/style directory are applied to the whole page */
 body {
   background: #FAFAFA;
-  color: #AAA;
-}
-
-a {
-  color: #03A9F4;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
-}
-
-h1 {
-  color: red;
 }
