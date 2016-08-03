@@ -14,16 +14,23 @@
       <input type="text" id="hashtag" class="form-control" name="hashtag" placeholder="#hashtag" ng-model="homeVm.hashtag">
 
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="homeVm.search()">Go! {{homeVm.hashtag}}</button>
+        <button class="btn btn-default" type="button" ng-click="homeVm.search()">Go! #{{homeVm.hashtag}}</button>
       </span>
     </div><!-- /input-group -->
 
 
       <!-- <polaroid></polaroid> -->
       <button ng-if="!homeVm.isAuth" type="button" class="btn btn-default" ng-click="homeVm.auth()">Log with Instagram</button>
-
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+      <polaroid ng-repeat="item in homeVm.data" data="item"></polaroid>
+    </div>
+  </div>
+
+
 </div>
 
 <!-- <h1>Hello World!</h1>

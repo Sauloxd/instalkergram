@@ -8,6 +8,7 @@ export default function polaroid(){
             data: '='
         },
         link: function(scope, element, attr) {
+          console.log('my data: ', scope.data);
         }
     };
 

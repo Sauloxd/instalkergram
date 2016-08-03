@@ -1,13 +1,13 @@
 <button class="polaroid--container">
   <div class="polaroid--frame">
-    <img src="../../../public/images/placeholder.jpg" alt="polaroid photo" class="polaroid--photo"/>
+    <img ng-src="{{data.images.standard_resolution.url}}" alt="polaroid photo" class="polaroid--photo"/>
     <div class="polaroid--user">
-      <img src="../../../public/images/usericon.jpg" alt="usericon" class="polaroid--user__photo" />
+      <img ng-src="{{data.user.profile_picture}}" alt="usericon" class="polaroid--user__photo" />
       <span class="sm">
-        saulofuruta
+        {{data.user.username}}
       </span>
       <span class="polaroid--user__hashtag lg">
-        #teste
+        {{data.caption.text}}
       </span>
     </div>
     <img src="../../../public/images/addPhoto.png" alt="add button" class="polaroid--addButton"/>

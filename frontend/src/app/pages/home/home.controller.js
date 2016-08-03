@@ -14,14 +14,11 @@ var homeCtrl = function (instagramFactory, $location, $localStorage) {
 
   vm.search = function() {
     var query = vm.hashtag.split('#');
-    if (query[0]) {
-      console.log('valid!', query);
-    } else {
+    if (!query[0]) {
       query = query[1];
-      console.log('invalid', query);
     }
-    console.log('query: ', query);
     instagramFactory.getUrls(query).then((response)=> {
+        vm.data = response.data;
         console.log('my urls: ', response.data);
       },
       (err) => {

@@ -1,4 +1,4 @@
-.polaroid--container + .polaroid--container{
+polaroid + polaroid{
   margin-left: 50px;
 }
 
@@ -87,5 +87,5 @@
 
 .polaroid--user .polaroid--user__hashtag {
   font-family: signpainter;
-  margin-left: 140px;
+
 }
