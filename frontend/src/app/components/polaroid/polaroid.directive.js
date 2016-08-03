@@ -5,10 +5,27 @@ export default function polaroid(){
         restrict: 'E',
         templateUrl: 'polaroid.html', // markup for template
         scope: {
-            data: '='
+            data: '=',
+            add: '='
         },
         link: function(scope, element, attr) {
-          console.log('my data: ', scope.data);
+
+          if(scope.add) {
+            console.log('is add: ', scope.add);
+            scope.action = function () {
+              console.log('im clicked!');
+            }
+          } else {
+            console.log('is remove: ');
+            scope.action = function () {
+              console.log('im removed!');
+            }
+          }
+
+
+
+
+
         }
     };
 
