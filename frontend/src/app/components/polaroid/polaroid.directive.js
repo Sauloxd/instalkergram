@@ -1,6 +1,6 @@
 import '!ng-cache!./polaroid.html';
 
-export default function polaroid(){
+export default function polaroid(crudFactory){
     return {
         restrict: 'E',
         templateUrl: 'polaroid.html', // markup for template
@@ -13,6 +13,7 @@ export default function polaroid(){
           if(scope.add) {
             console.log('is add: ', scope.add);
             scope.action = function () {
+              crudFactory.addToCategory('Album', scope.data).then(()=>{console.log('posted!')}, (err)=>{console.log('err', err)});
               console.log('im clicked!');
             }
           } else {

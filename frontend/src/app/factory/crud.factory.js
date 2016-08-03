@@ -5,6 +5,17 @@ var crudFactory = function (constantsFactory, $http, $localStorage, $state) {
     console.log('getting categories');
     return $http.get('http://localhost:3000/get-categories');
   }
+
+  crud.addToCategory = function (category, item) {
+    console.log('add Categories');
+    return $http.post('http://localhost:3000/update-category', {category: category, item: item});
+  }
+
+  crud.removeFromCategory = function (category, item) {
+    console.log('add Categories');
+    return $http.delete('http://localhost:3000/delete-image', {category: category, item: item});
+  }
+
   return crud;
 }
 

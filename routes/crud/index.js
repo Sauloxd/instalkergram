@@ -24,7 +24,7 @@ exports.getCategories = function(req, res) {
 exports.updateCategory = function(req, res) {
     var _category = req.body.category;
     var _item = req.body.item;
-
+    console.log('updating.. ' + _category + '...item..', _item);
     db.update('instalkergram', {category: _category, item: _item}, function() {
         console.log('item ' + _item + ' inserted!');
         res.json({success: true});
@@ -41,10 +41,10 @@ exports.getImages = function(req, res) {
 
 exports.deleteImage = function(req, res) {
     var _category = req.body.category;
-    var _hashtag = req.body.hashtag;
+    var _item = req.body.item;
 
-    db.delete('instalkergram', {category: _category, hashtag: _hashtag}, function() {
-        console.log('hashtag ' + _hashtag + ' removed!');
+    db.delete('instalkergram', {category: _category, item: _item}, function() {
+        console.log('hashtag ' + _item + ' removed!');
         res.json({success: true});
     })
 };
