@@ -1,22 +1,31 @@
-var homeCtrl = function (instagramFactory, $location) {
+var homeCtrl = function (instagramFactory, $location, $localStorage) {
   var vm = this;
+  vm.isAuth = instagramFactory.isAuth();
+  console.log('ta autenticado? ', vm.isAuth);
+  if(vm.isAuth) {
+
+  }
 
   console.log('location: ', $location.absUrl());
-  this.auth = function () {
+  vm.auth = function () {
       console.log('auth clicked');
       instagramFactory.authenticate();
   }
-  console.log('home ctrl loaded');
-  this.getUrls = function () {
-      console.log('search for ', vm.hashtag);
-      console.log('my token', instagramFactory.getToken());
-      instagramFactory.getUrls(vm.hashtag).then((response)=> {
-          console.log('my urls: ', response.data);
-        },
-        (err) => {
-          console.log('err', err)
-        });
+
+  vm.search = function() {
+    var query = vm.hashtag.split('#');
+    if (!query[0]) {
+      query = query[1];
+    }
+    instagramFactory.getUrls(query).then((response)=> {
+        vm.data = response.data;
+        console.log('my urls: ', response.data);
+      },
+      (err) => {
+        console.log('err', err)
+      });
   }
+
 }
 
 export default homeCtrl;

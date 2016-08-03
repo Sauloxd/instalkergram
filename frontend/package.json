@@ -41,6 +41,7 @@
     "jquery": "^3.1.0",
     "lodash": "^4.14.1",
     "ng-annotate": "^1.2.1",
+    "ngstorage": "^0.3.11",
     "underscore": "^1.8.3",
     "url-loader": "^0.5.7"
   }

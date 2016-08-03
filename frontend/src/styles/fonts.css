@@ -31,11 +31,34 @@
 
 }
 
-/* latin */
+/* riesling */
 @font-face {
   font-family: 'riesling';
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   src: url(../public/fonts/riesling.ttf) format('ttf');
+}
 
+/* signpainter */
+@font-face {
+  font-family: 'signpainter';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../public/fonts/SignPainter-HouseScript.ttf) format('ttf');
+}
+
+/* signpainter */
+@font-face {
+  font-family: 'avenir';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../public/fonts/AvenirLTStd-Book.otf) format('otf');
+}
+
+/* signpainter */
+@font-face {
+  font-family: 'avenir';
+  font-style: lighter;
+  font-weight: 300;
+  src: url(../public/fonts/AvenirLTStd-Light.otf) format('otf');
 }
