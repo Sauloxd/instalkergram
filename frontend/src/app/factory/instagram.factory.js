@@ -1,9 +1,11 @@
-var instagramFactory = function ($location, constantsFactory, $http) {
+var instagramFactory = function ($location, constantsFactory, $http, $localStorage, $state) {
   var _token = '';
   var instagram = {}
 
   instagram.authenticate = function () {
     console.log(' the url : ',  $location.absUrl().split('#')[0]);
+    $localStorage.isg = {};
+    $localStorage.isg.isAuth = true;
     var igPopup = window.open("https://instagram.com/oauth/authorize/?client_id=" + constantsFactory.clientId +
         "&redirect_uri=" + constantsFactory.redirectUri +
         "&response_type=token" + "&scope=public_content", "igPopup");
@@ -15,14 +17,26 @@ var instagramFactory = function ($location, constantsFactory, $http) {
   }
 
   instagram.getToken = function() {
-    return _token;
+    return $localStorage.isg.token;
   }
 
   instagram.setToken = function(token) {
-    _token = token;
+    $localStorage.isg.token = token;
   }
 
+  instagram.isAuth = function() {
+    if($localStorage.isg) {
+      return $localStorage.isg.isAuth;
+    } else {
+      return false;
+    }
+  }
 
+  instagram.unAuthenticate = function() {
+    delete $localStorage.isg;
+    //TODO: Improve the refresh of page
+    location.reload();
+  }
 
   return instagram;
 }
