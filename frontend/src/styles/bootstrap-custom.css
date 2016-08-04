@@ -15,3 +15,7 @@
 .row + .row {
   margin-top: 50px;
 }
+
+html, body {
+  height: 100%;
+}

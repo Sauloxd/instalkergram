@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
 
 import routing from './app.config';
-import navbarCtrl from './components/navbar/navbar.controller'
+import navbarCtrl from './components/navbar/navbar.controller';
+import loading from './components/loading';
 import home from './pages/home';
 import album from './pages/album';
 import oauth from './pages/oauth';
@@ -24,7 +25,7 @@ var initStuff = function($localStorage) {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [uirouter, ngStorage, home, factories, oauth, album])
+angular.module(MODULE_NAME, [uirouter, loading, ngStorage, home, factories, oauth, album])
   .config(routing)
   .controller('initStuff', initStuff)
   .directive('polaroid', polaroid)
