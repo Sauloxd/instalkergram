@@ -1,0 +1,16 @@
+<button class="polaroid--container" ng-click="action()">
+  <div class="polaroid--frame">
+    <img ng-src="{{data.images.standard_resolution.url}}" alt="polaroid photo" class="polaroid--photo"/>
+    <div class="polaroid--user">
+      <img ng-src="{{data.user.profile_picture}}" alt="usericon" class="polaroid--user__photo" />
+      <span class="sm">
+        {{data.user.username}}
+      </span>
+      <span class="polaroid--user__hashtag lg">
+        {{data.caption.text}}
+      </span>
+    </div>
+    <img ng-if="add" src="../../../public/images/addPhoto.png" alt="add button" class="polaroid--addButton"/>
+    <img ng-if="!add" src="../../../public/images/removePhoto.png" alt="add button" class="polaroid--addButton"/>
+  </div>
+</button>

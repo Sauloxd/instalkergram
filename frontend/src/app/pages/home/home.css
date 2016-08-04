@@ -1,0 +1,9 @@
+label {
+  display: block;
+}
+
+.input-group {
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }

@@ -1,0 +1,44 @@
+<div ng-include="'navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <label for="hashtag">
+        <h1 class="text-center">Search for #:</h1>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+      <div class="input-group" ng-if="homeVm.isAuth">
+      <input type="text" id="hashtag" class="form-control" name="hashtag" placeholder="#hashtag" ng-model="homeVm.hashtag">
+
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="homeVm.search()">Go! #{{homeVm.hashtag}}</button>
+      </span>
+    </div><!-- /input-group -->
+
+
+      <!-- <polaroid></polaroid> -->
+      <button ng-if="!homeVm.isAuth" type="button" class="btn btn-default" ng-click="homeVm.auth()">Log with Instagram</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+      <polaroid ng-repeat="item in homeVm.data" data="item" add="true"></polaroid>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- <h1>Hello World!</h1>
+<button type="button" name="auth" ng-click="homeVm.auth()">Authenticate</button>
+
+<div class="">
+  <label for="hashtag">Hashtag: </label>
+  <input type="text" name="hashtag" value="hashtag" id="hashtag" ng-model="homeVm.hashtag">
+</div>
+
+<button type="button" name="auth" ng-click="homeVm.getUrls()">Get Urls!</button> -->
