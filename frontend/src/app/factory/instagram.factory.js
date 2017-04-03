@@ -12,7 +12,7 @@ var instagramFactory = function ($location, constantsFactory, $http, $localStora
 
   instagram.getUrls = function (hashtag) {
     console.log('getting photo...');
-    return $http.get('http://localhost:3000/getUrlsFromInstagram/' + hashtag +'/'+ $localStorage.isg.token);
+    return $http.get('http://instalkergram.herokuapp.com/getUrlsFromInstagram/' + hashtag +'/'+ $localStorage.isg.token);
   }
 
   instagram.getToken = function() {

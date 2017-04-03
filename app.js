@@ -4,9 +4,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(express.static('public')); //Serving front from public
+app.use(express.static('public/frontend/dist')); //Serving front from public
 app.use(cors());
 
 // routes
@@ -19,6 +21,6 @@ app.post('/delete-image', routes.crud.deleteImage);
 
 app.get('/getUrlsFromInstagram/:q/:token', routes.instagram.getUrls);
 
-app.listen(3000, function () {
-  console.log('rodando na porta 3000 :D!');
+app.listen(app.get('port'), function () {
+  console.log('rodando na porta ', app.get('port'));
 });
