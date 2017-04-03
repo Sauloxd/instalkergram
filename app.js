@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(express.static('public/frontend/dist')); //Serving front from public
+app.use(express.static('frontend/dist')); //Serving front from public
 app.use(cors());
 
 // routes
